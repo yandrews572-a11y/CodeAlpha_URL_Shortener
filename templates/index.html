@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shortly | URL Shortener</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar container">
+
+        <div class="logo">
+            Shortly
+        </div>
+
+        <div class="nav-right">
+            <span>Fast & Secure</span>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero container">
+
+            <h1>
+                Shorten Your Long Links
+            </h1>
+
+            <p>
+                Transform long URLs into short, powerful links.
+                Create custom aliases and set expiration dates
+                with Shortly.
+            </p>
+
+
+            <!-- URL Shortener -->
+            <div class="shortener-card">
+
+                <form id="shortenForm">
+
+                    <!-- URL Input -->
+                    <div class="url-box">
+
+                        <input
+                            type="url"
+                            id="url"
+                            name="url"
+                            placeholder="🔗 Enter your long URL here..."
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            class="shorten-btn"
+                        >
+                            Shorten Now!
+                        </button>
+
+                    </div>
+
+
+                    <!-- Options -->
+                    <div class="options">
+
+                        <!-- Custom Alias -->
+                        <div class="option">
+
+                            <label for="customAlias">
+                                Custom Alias
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customAlias"
+                                name="custom_alias"
+                                placeholder="e.g. mygoogle"
+                            >
+
+                        </div>
+
+
+                        <!-- Expiry -->
+                        <div class="option">
+
+                            <label for="expiry">
+                                Expiry Days
+                            </label>
+
+                            <input
+                                type="number"
+                                id="expiry"
+                                name="expires_in_days"
+                                placeholder="e.g. 7"
+                                min="1"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Loading -->
+                <div
+                    id="loading"
+                    class="loading"
+                >
+                    Creating your short link...
+                </div>
+
+
+                <!-- Error -->
+                <div
+                    id="error"
+                    class="error"
+                ></div>
+
+
+                <!-- Result -->
+                <div
+                    id="result"
+                    class="result"
+                >
+
+                    <div class="result-title">
+                        YOUR SHORT LINK
+                    </div>
+
+                    <div class="short-link">
+
+                        <a
+                            id="shortLink"
+                            href="#"
+                            target="_blank"
+                        >
+                            -
+                        </a>
+
+                        <button
+                            type="button"
+                            id="copyButton"
+                            class="copy-btn"
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features -->
+        <section class="features container">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast
+                </h3>
+
+                <p>
+                    Generate short links instantly
+                    with our lightweight API.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Secure
+                </h3>
+
+                <p>
+                    Your original URLs are safely
+                    stored in MongoDB.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Custom Aliases
+                </h3>
+
+                <p>
+                    Create memorable short links
+                    using your own aliases.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Shortly URL Shortener
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
